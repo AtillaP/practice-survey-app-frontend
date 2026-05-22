@@ -17,6 +17,14 @@
   }
 }
 
+.start-survey-button {
+  font-size: 2.5rem;
+  font-weight: bold;
+  padding: 20px 40px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
 .hero {
   position: relative;
 

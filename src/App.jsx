@@ -5,7 +5,11 @@ import heroImg from './assets/hero.png'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [formData, setFormData] = useState({
+    username: "anonym",
+    email: "",
+    message: "",
+  });
 
   return (
     <>
@@ -16,18 +20,22 @@ function App() {
           <img src={viteLogo} className="vite" alt="Vite logo" />
         </div>
         <div>
-          <h1>Get started</h1>
+          <button type="button" className='start-survey-button'>Start survey</button>
           <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
+            Give your data, choosing a username is optional!
           </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
+        <input
+          type="text"
+          value={formData.username}
+          onChange={(e) => setFormData({
+                            ...formData,
+                            username: e.target.value,
+                          })
+                        }
+                        placeholder="anonim"
+        />
+          <p>Name is {formData.username}</p>
+        </div>        
       </section>
 
       <div className="ticks"></div>
